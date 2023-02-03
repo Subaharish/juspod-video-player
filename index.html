@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Video Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="video-player">
+            <video class="video" controls="controls">
+                <!-- <source id="video-source" src="assets/JusPod.mp4" controls  type="video/mp4"/> -->
+                <!-- <source id="video-source" src="assets/Juspod - Copy.mp4" controls preload="metadata" type="video/mp4"/> -->
+                <source id="video-source" src="assets/juspod video.mp4" controls preload="metadata" type="video/mp4"/>
+            </video>
+
+            <div class="back-btn">
+                <div class="back">Previous Question</div>
+            </div>
+            
+            <div class="link-btn text-center">
+                <div class="video-btn first-btn">How to start a podcast?</div>
+                <div class="video-btn second-btn">How to have consistency?</div>
+                <div class="video-btn third-btn">How much of a role does the messaging play?</div>
+                <div class="video-btn forth-btn">Selecting the right channels for promotion</div>
+            </div>
+        </div>
+    </div> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="index.js"  type="text/javascript"></script>
+</body>
+</html>
