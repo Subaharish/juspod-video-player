@@ -3,14 +3,22 @@ const videoSource = document.querySelector("#video-source")
 const firstVideoBtn = document.querySelector(".first-btn")
 const secondVideoBtn = document.querySelector(".second-btn")
 const linkBtn = document.querySelector(".link-btn")
+const img = document.querySelector(".initial-img")
 
+video.style.display ='none'
 firstVideoBtn.style.display='none'
 secondVideoBtn.style.display='none'
+
+img.addEventListener('click',()=>{
+    video.style.display= 'block';
+    img.style.display ='none';
+    video.play();
+})
+
 
 video.load();
 
 video.onloadedmetadata= function(){
-
     console.log('metadata loaded')
     let EndTime = this.duration
     console.log(EndTime)

@@ -6,6 +6,7 @@
 
 body{
     background-color: #2D033B;
+    background-color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,11 +38,13 @@ a{
     box-shadow: 80px 80px 100px rgba(6, 6, 7, 0.5);
     padding: 3px;
     border-radius: 10px;
-    border-color: #810CA8;
+    border-color: #FFFFFF;
     border-style: solid;
     overflow: hidden;
 }
-
+.initial-img{
+    width: 100%;
+}
 video{
     /* overflow: hidden; */
     width: 100%;
