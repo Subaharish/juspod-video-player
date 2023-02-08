@@ -83,7 +83,7 @@ video{
     color: #000000;
 } */
 
-.link-btn{
+.link-btn, .mid-btn{
     width: 100%;
     position: absolute;
     /* bottom:-20%;
@@ -123,6 +123,35 @@ video{
     border-radius: 100px;
     color: #000000;
 }
+.mid-btn{
+    bottom: 14rem;
+}
+.juspod-btn{
+    display: none;
+    padding: 1.2rem 2rem;
+    width: 17rem;
+    height: 5rem;
+    font-size: 1.2rem;
+    background:#89FF6B;
+    border-radius: 20px;
+}
+.juspod-btn a{
+    color: #000000;
+}
+.blink{
+    display: flex;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
 
 .video-btn:hover{
     background: #000000;

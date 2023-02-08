@@ -2,6 +2,7 @@ const video = document.querySelector(".video")
 const videoSource = document.querySelector("#video-source")
 const firstVideoBtn = document.querySelector(".first-btn")
 const secondVideoBtn = document.querySelector(".second-btn")
+const juspodBtn = document.querySelector(".juspod-btn")
 const linkBtn = document.querySelector(".link-btn")
 const img = document.querySelector(".initial-img")
 
@@ -31,13 +32,35 @@ video.onloadedmetadata= function(){
         
         for (let i = 0; i < EndTime; i++) {
             
-            if (  Math.floor(currTime) === 57 ){
+            if (Math.floor(currTime) === 55){
+                juspodBtn.classList.add('blink');
+                setTimeout(() => {
+                    juspodBtn.classList.remove('blink');
+                }, 3000);
+            }
+            else if (Math.floor(currTime) === 91){
+                juspodBtn.classList.add('blink');
+                setTimeout(() => {
+                    juspodBtn.classList.remove('blink');
+                }, 3000);
+            }
+            else if (Math.floor(currTime) === 132){
+                juspodBtn.classList.add('blink');
+                setTimeout(() => {
+                    juspodBtn.classList.remove('blink');
+                }, 3000);
+            }
+
+
+            else if (  Math.round(currTime) === 58 ){
+                juspodBtn.classList.remove('blink');
                 video.pause();
                 console.log('Button pair 1');
                 firstVideoBtn.style.display='flex'
                 secondVideoBtn.style.display ='flex';
             }
-            else if (  Math.floor(currTime) === 90 ){
+            else if (  Math.floor(currTime) === 94 ){
+                juspodBtn.classList.remove('blink');
                 video.pause();
                 console.log('Button pair 2');
                 firstVideoBtn.style.display='flex'
@@ -52,7 +75,7 @@ video.onloadedmetadata= function(){
         firstVideoBtn.addEventListener('click', ()=>{
             firstVideoBtn.style.display='none';
             secondVideoBtn.style.display ='none';
-            video.currentTime = 60;
+            video.currentTime = 63;
             // video.load();
             video.play();
         })
@@ -60,7 +83,7 @@ video.onloadedmetadata= function(){
         secondVideoBtn.addEventListener('click', ()=>{
             firstVideoBtn.style.display='none';
             secondVideoBtn.style.display ='none';
-            video.currentTime = 93;
+            video.currentTime = 99;
             // video.load();
             video.play();
         })
