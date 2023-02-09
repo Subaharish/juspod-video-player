@@ -4,6 +4,9 @@ const firstVideoBtn = document.querySelector(".first-btn")
 const secondVideoBtn = document.querySelector(".second-btn")
 const juspodBtn = document.querySelector(".juspod-btn")
 const linkBtn = document.querySelector(".link-btn")
+const backBtn = document.querySelector(".back-btn")
+const restartBtn = document.querySelector(".restart-btn")
+const skipBtn = document.querySelector(".skip-btn")
 const img = document.querySelector(".initial-img")
 
 video.style.display ='none'
@@ -16,7 +19,6 @@ img.addEventListener('click',()=>{
     video.play();
 })
 
-
 video.load();
 
 video.onloadedmetadata= function(){
@@ -26,11 +28,27 @@ video.onloadedmetadata= function(){
     
     video.ontimeupdate = function() {
         
-        let currTime = video.currentTime
-        console.log(currTime)
-        console.log(Math.floor(currTime))
+        let currTime = video.currentTime;
+        console.log(currTime);
+        console.log(Math.floor(currTime));
+        let skipTime, replayTime;
         
         for (let i = 0; i < EndTime; i++) {
+
+            if ( currTime <= 58){
+                console.log("1");
+                replayTime=0;
+                skipTime = 63;
+            }
+            else if( currTime > 58 && currTime < 94 ){
+                console.log("2");
+                replayTime= 63;
+                skipTime = 99;
+            }else if( 99 < currTime){
+                console.log("3");
+                replayTime= 99;
+                skipTime = currTime;
+            }
             
             if (Math.floor(currTime) === 55){
                 juspodBtn.classList.add('blink');
@@ -73,19 +91,42 @@ video.onloadedmetadata= function(){
         }
 
         firstVideoBtn.addEventListener('click', ()=>{
-            firstVideoBtn.style.display='none';
-            secondVideoBtn.style.display ='none';
-            video.currentTime = 63;
-            // video.load();
-            video.play();
+            firstVideoBtn.classList.add('bounce');
+            setTimeout(() => {
+                firstVideoBtn.classList.remove('bounce');
+                firstVideoBtn.style.display='none';
+                secondVideoBtn.style.display ='none';
+                video.currentTime = 63;
+                // video.load();
+                video.play();
+            }, 1000);
         })
 
         secondVideoBtn.addEventListener('click', ()=>{
-            firstVideoBtn.style.display='none';
-            secondVideoBtn.style.display ='none';
-            video.currentTime = 99;
-            // video.load();
+            secondVideoBtn.classList.add('bounce');
+            setTimeout(()=>{
+                firstVideoBtn.style.display='none';
+                secondVideoBtn.style.display ='none';
+                video.currentTime = 99;
+                // video.load();
+                video.play();
+            },1000);
+        })
+
+        restartBtn.addEventListener('click', ()=>{
+            video.currentTime = 0;
             video.play();
         })
+
+        skipBtn.addEventListener('click', ()=>{
+            video.currentTime = skipTime;
+            video.play();
+        })
+
+        backBtn.addEventListener('click', ()=>{
+            video.currentTime = replayTime;
+            video.play();
+        })
+        
     }
 }

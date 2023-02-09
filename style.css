@@ -24,7 +24,7 @@ a{
 .video-player{
     position: relative;
     background-color: black;
-    width:100%;
+    width:85%;
     /* margin-top: 4rem; */
     /* height: 500px; */
     /* max-height: 800px; */
@@ -41,6 +41,7 @@ a{
     border-color: #FFFFFF;
     border-style: solid;
     overflow: hidden;
+    margin: 0 auto;
 }
 .initial-img{
     width: 100%;
@@ -83,7 +84,7 @@ video{
     color: #000000;
 } */
 
-.link-btn, .mid-btn{
+.link-btn, .mid-btn , .btm-btn{
     width: 100%;
     position: absolute;
     /* bottom:-20%;
@@ -93,7 +94,8 @@ video{
     /* height: 100px; */
     /* background-color: red; */
     /* top:50%; */
-    bottom: 11rem;
+    left: 0;
+    bottom: 9rem;
     display: flex;
     /* display: none; */
     flex-direction: column;
@@ -115,7 +117,6 @@ video{
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 1rem;
     text-align: center;
     letter-spacing: 1px;
     background: #6BF6FF;
@@ -124,14 +125,14 @@ video{
     color: #000000;
 }
 .mid-btn{
-    bottom: 14rem;
+    bottom: 11rem;
 }
 .juspod-btn{
     display: none;
     padding: 1.2rem 2rem;
-    width: 17rem;
+    width: 15rem;
     height: 5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     background:#89FF6B;
     border-radius: 20px;
 }
@@ -158,8 +159,54 @@ video{
     border: 1px solid #6BF6FF;
     color: #6BF6FF;
 }
-
+.juspod-btn:hover{
+    background:#89FF6B;
+    border: none;
+    color: #000000;
+}
 .first-btn, .second-btn{
-    font-size: 0.9rem;
-    line-height: 17px;
+    font-size: 0.8em;
+}
+
+.bounce{
+    animation: bounce 2s ease 1;   
+}
+
+@keyframes bounce{
+    0%{
+        transform:translateY(0%);
+    }
+    10%{
+        transform:translateY(-12%);
+    }
+    20%{
+        transform:translateY(0%);
+    }
+    30%{
+        transform:translateY(-8%);
+    }
+    40%{
+        transform:translateY(0%);
+    }
+}
+
+.btm-btn{
+    bottom: 1rem;
+    flex-direction: row;
+    font-size: 0.8rem;
+    gap:12px;
+}
+
+.ctrl-btn{
+    background-color: #c1c1c1;
+    box-shadow: 2px 3px 0.4px #FFFFFF;
+    border-radius: 9px;
+    width: 5rem;
+    height: 2rem;
+}
+
+.ctrl-btn:hover{
+    background: #000000;
+    color: #c1c1c1;
+    border: none;
 }
