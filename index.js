@@ -7,16 +7,19 @@ const linkBtn = document.querySelector(".link-btn")
 const backBtn = document.querySelector(".back-btn")
 const restartBtn = document.querySelector(".restart-btn")
 const skipBtn = document.querySelector(".skip-btn")
+const btmBtn = document.querySelector(".btm-btn")
 const img = document.querySelector(".initial-img")
 
 video.style.display ='none'
 firstVideoBtn.style.display='none'
 secondVideoBtn.style.display='none'
+btmBtn.style.display='none'
 
 img.addEventListener('click',()=>{
     video.style.display= 'block';
     img.style.display ='none';
     video.play();
+    btmBtn.style.display='flex'
 })
 
 video.load();
