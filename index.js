@@ -41,13 +41,14 @@ video.onloadedmetadata= function(){
             if ( currTime <= 58){
                 console.log("1");
                 replayTime=0;
-                skipTime = 63;
+                skipTime = 58;
             }
             else if( currTime > 58 && currTime < 94 ){
                 console.log("2");
                 replayTime= 63;
-                skipTime = 99;
+                skipTime = 94;
             }else if( 99 < currTime){
+                skipBtn.style.display = 'none'
                 console.log("3");
                 replayTime= 99;
                 skipTime = currTime;
