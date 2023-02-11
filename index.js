@@ -8,12 +8,19 @@ const backBtn = document.querySelector(".back-btn")
 const restartBtn = document.querySelector(".restart-btn")
 const skipBtn = document.querySelector(".skip-btn")
 const btmBtn = document.querySelector(".btm-btn")
+const firstChoiceBtn = document.querySelector(".first-choice-btn")
+const secondChoiceBtn = document.querySelector(".second-choice-btn")
 const img = document.querySelector(".initial-img")
+const miniContainer = document.querySelector(".mini-container")
+const moreOption= document.querySelector(".more-option-btn")
+const miniVideo = document.querySelector(".mini-video")
+const cross = document.querySelector(".cross")
 
 video.style.display ='none'
 firstVideoBtn.style.display='none'
 secondVideoBtn.style.display='none'
 btmBtn.style.display='none'
+moreOption.style.display='none'
 
 img.addEventListener('click',()=>{
     video.style.display= 'block';
@@ -39,6 +46,7 @@ video.onloadedmetadata= function(){
         for (let i = 0; i < EndTime; i++) {
 
             if ( currTime <= 58){
+                skipBtn.style.display = 'flex'
                 console.log("1");
                 replayTime=0;
                 skipTime = 58;
@@ -54,43 +62,63 @@ video.onloadedmetadata= function(){
                 skipTime = currTime;
             }
             
-            if (Math.floor(currTime) === 55){
-                juspodBtn.classList.add('blink');
-                setTimeout(() => {
-                    juspodBtn.classList.remove('blink');
-                }, 3000);
+            // if (Math.floor(currTime) === 54){
+            //     juspodBtn.classList.add('blink');
+            //     setTimeout(() => {
+            //         juspodBtn.classList.remove('blink');
+            //     }, 3000);
+            // }
+            // else if (Math.floor(currTime) === 91){
+            //     juspodBtn.classList.add('blink');
+            //     setTimeout(() => {
+            //         juspodBtn.classList.remove('blink');
+            //     }, 3000);
+            // }
+            // else if (Math.floor(currTime) === 132){
+            //     juspodBtn.classList.add('blink');
+            //     setTimeout(() => {
+            //         juspodBtn.classList.remove('blink');
+            //     }, 3000);
+            // }
+            if(Math.floor(currTime) === 55){
+                video.pause();
+                moreOption.style.display='flex'
+                juspodBtn.style.display='flex'
             }
-            else if (Math.floor(currTime) === 91){
-                juspodBtn.classList.add('blink');
-                setTimeout(() => {
-                    juspodBtn.classList.remove('blink');
-                }, 3000);
+            else if(Math.round(currTime) === 91){
+                video.pause();
+                moreOption.style.display='flex'
+                juspodBtn.style.display='flex'
             }
-            else if (Math.floor(currTime) === 132){
-                juspodBtn.classList.add('blink');
-                setTimeout(() => {
-                    juspodBtn.classList.remove('blink');
-                }, 3000);
+            else if(Math.round(currTime) === 131){
+                video.pause();
+                moreOption.style.display='flex'
+                juspodBtn.style.display='flex'
             }
+
 
 
             else if (  Math.round(currTime) === 58 ){
-                juspodBtn.classList.remove('blink');
                 video.pause();
                 console.log('Button pair 1');
+                moreOption.style.display='none';
+                juspodBtn.style.display='none';
                 firstVideoBtn.style.display='flex'
                 secondVideoBtn.style.display ='flex';
             }
             else if (  Math.floor(currTime) === 94 ){
-                juspodBtn.classList.remove('blink');
                 video.pause();
                 console.log('Button pair 2');
+                moreOption.style.display='none';
+                juspodBtn.style.display='none';
                 firstVideoBtn.style.display='flex'
                 secondVideoBtn.style.display ='flex';
             }
             else{
                 firstVideoBtn.style.display='none'
                 secondVideoBtn.style.display='none'
+                moreOption.style.display='none'
+                juspodBtn.style.display='none'
             }
         }
 
@@ -131,6 +159,25 @@ video.onloadedmetadata= function(){
             video.currentTime = replayTime;
             video.play();
         })
+
+        firstChoiceBtn.addEventListener('click',()=>{
+            video.pause();
+            miniVideo.load();
+            moreOption.style.display='none'
+            juspodBtn.style.display='none'
+            btmBtn.style.display='none'
+            miniContainer.style.display= 'flex';
+            miniVideo.play();
+        })
+        
+        cross.addEventListener('click',()=>{
+            miniContainer.style.display='none';
+            miniVideo.pause();
+            moreOption.style.display='flex';
+            juspodBtn.style.display='flex';
+            btmBtn.style.display='flex'
+        })
+
         
     }
 }
