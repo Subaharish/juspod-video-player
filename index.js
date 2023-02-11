@@ -30,6 +30,7 @@ img.addEventListener('click',()=>{
 })
 
 video.load();
+miniVideo.load();
 
 video.onloadedmetadata= function(){
     console.log('metadata loaded')
@@ -162,7 +163,6 @@ video.onloadedmetadata= function(){
 
         firstChoiceBtn.addEventListener('click',()=>{
             video.pause();
-            miniVideo.load();
             moreOption.style.display='none'
             juspodBtn.style.display='none'
             btmBtn.style.display='none'
