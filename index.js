@@ -160,24 +160,23 @@ video.onloadedmetadata= function(){
             video.currentTime = replayTime;
             video.play();
         })
-
-        firstChoiceBtn.addEventListener('click',()=>{
-            video.pause();
-            moreOption.style.display='none'
-            juspodBtn.style.display='none'
-            btmBtn.style.display='none'
-            miniContainer.style.display= 'flex';
-            miniVideo.play();
-        })
-        
-        cross.addEventListener('click',()=>{
-            miniContainer.style.display='none';
-            miniVideo.pause();
-            moreOption.style.display='flex';
-            juspodBtn.style.display='flex';
-            btmBtn.style.display='flex'
-        })
-
         
     }
 }
+
+firstChoiceBtn.addEventListener('click',()=>{
+    video.pause();
+    moreOption.style.display='none'
+    juspodBtn.style.display='none'
+    btmBtn.style.display='none'
+    miniContainer.style.display= 'flex';
+    miniVideo.play();
+})
+
+cross.addEventListener('click',()=>{
+    miniContainer.style.display='none';
+    miniVideo.pause();
+    moreOption.style.display='flex';
+    juspodBtn.style.display='flex';
+    btmBtn.style.display='flex'
+})

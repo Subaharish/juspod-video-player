@@ -179,10 +179,9 @@ video{
 }
 .juspod-btn{
     display: none;
-    padding: 1.2rem 2rem;
-    width: 15rem;
+    width: 14rem;
     height: 5rem;
-    font-size: 1.1rem;
+    font-size: 1em;
     background:#89FF6B;
     border-radius: 20px;
 }
