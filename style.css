@@ -262,7 +262,7 @@ video{
 
 @media (min-width:992px) {
     .video-player{
-        height: 90vh;
+        /* height: 90vh; */
         width:30%;
     }
     .initial-img{
